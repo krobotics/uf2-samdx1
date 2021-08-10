@@ -248,6 +248,8 @@ int main(void) {
     assert(8 << NVMCTRL->PARAM.bit.PSZ == FLASH_PAGE_SIZE);
     assert(FLASH_PAGE_SIZE * NVMCTRL->PARAM.bit.NVMP == FLASH_SIZE);
 
+    delay(5000);
+    
     /* Jump in application if condition is satisfied */
     check_start_application();
 
@@ -265,7 +267,6 @@ int main(void) {
 
     logmsg("Before main loop");
 
-    delay(5000);
 
     usb_init();
 
@@ -274,7 +275,7 @@ int main(void) {
     led_tick_step = 10;
 
     /* Wait for a complete enum on usb or a '#' char on serial line */
-    uint16_t retries=30;
+    uint16_t retries=4;
     while (1) {
         if (USB_Ok()) {
             if (!main_b_cdc_enable) {
@@ -291,7 +292,8 @@ int main(void) {
                 }
                 else
                 {
-                    *DBL_TAP_PTR = DBL_TAP_MAGIC_QUICK_BOOT;
+                    *DBL_TAP_PTR = 0;
+                    delay(500);
                     resetIntoApp();
                 }
 

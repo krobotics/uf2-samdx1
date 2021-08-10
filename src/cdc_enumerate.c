@@ -212,7 +212,7 @@ char cfgDescriptor[] = {
 #endif
 
     // MSC
-
+#if USE_MSC
     9,               /// descriptor size in bytes
     4,               /// descriptor type - interface
     USE_CDC ? 2 : 0, /// interface number
@@ -238,6 +238,7 @@ char cfgDescriptor[] = {
     PKT_SIZE,       /// maximum packet size
     0,
     0, /// maximum NAK rate
+#endif
 
 #if USE_HID
     // HID

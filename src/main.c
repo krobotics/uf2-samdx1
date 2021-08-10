@@ -110,12 +110,10 @@ static void check_start_application(void) {
             *DBL_TAP_PTR = DBL_TAP_MAGIC_QUICK_BOOT;
             // this will be cleared after successful USB enumeration
             // this is around 1.5s
-            resetHorizon = timerHigh + 50;
+            resetHorizon = timerHigh + 200;
             return;
         }
     }
-#else
-    resetHorizon = timerHigh + 200;    
 #endif
 
     if (RESET_CONTROLLER->RCAUSE.bit.POR) {
@@ -267,6 +265,8 @@ int main(void) {
 
     logmsg("Before main loop");
 
+    delay(5000);
+
     usb_init();
 
     // not enumerated yet
@@ -274,6 +274,7 @@ int main(void) {
     led_tick_step = 10;
 
     /* Wait for a complete enum on usb or a '#' char on serial line */
+    uint16_t retries=30;
     while (1) {
         if (USB_Ok()) {
             if (!main_b_cdc_enable) {
@@ -283,6 +284,16 @@ int main(void) {
 #endif
                 RGBLED_set_color(COLOR_USB);
                 led_tick_step = 1;
+
+                if(retries)
+                {
+                    retries--;
+                }
+                else
+                {
+                    *DBL_TAP_PTR = DBL_TAP_MAGIC_QUICK_BOOT;
+                    resetIntoApp();
+                }
 
 #if USE_SCREEN
                 screen_init();

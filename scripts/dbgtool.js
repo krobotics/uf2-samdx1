@@ -103,7 +103,7 @@ function main() {
             if (err) {
                 fatal("error: " + err.message)
             }
-            let buf = Buffer.alloc(logSize)
+            let buf = new Buffer(logSize)
             for (let l of stdout.split(/\r?\n/)) {
                 let m = /^M\((\d+)\)\s*=\s*(\d+)/.exec(l)
                 if (m) {

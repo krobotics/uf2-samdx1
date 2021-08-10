@@ -248,7 +248,7 @@ int main(void) {
     assert(8 << NVMCTRL->PARAM.bit.PSZ == FLASH_PAGE_SIZE);
     assert(FLASH_PAGE_SIZE * NVMCTRL->PARAM.bit.NVMP == FLASH_SIZE);
 
-    delay(5000);
+    delay(1000);
     
     /* Jump in application if condition is satisfied */
     check_start_application();

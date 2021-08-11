@@ -248,7 +248,7 @@ int main(void) {
     assert(8 << NVMCTRL->PARAM.bit.PSZ == FLASH_PAGE_SIZE);
     assert(FLASH_PAGE_SIZE * NVMCTRL->PARAM.bit.NVMP == FLASH_SIZE);
 
-    delay(1000);
+    //delay(1000);
     
     /* Jump in application if condition is satisfied */
     check_start_application();
@@ -275,7 +275,7 @@ int main(void) {
     led_tick_step = 10;
 
     /* Wait for a complete enum on usb or a '#' char on serial line */
-    uint16_t retries=4;
+    uint16_t retries=10;
     while (1) {
         if (USB_Ok()) {
             if (!main_b_cdc_enable) {

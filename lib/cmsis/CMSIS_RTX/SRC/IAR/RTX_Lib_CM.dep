@@ -13,52 +13,52 @@
     <configuration>
         <name>CM0_LE</name>
         <outputs>
-            <file>$PROJ_DIR$\..\HAL_CM.c</file>
-            <file>$PROJ_DIR$\HAL_CM0.s</file>
             <file>$PROJ_DIR$\SVC_Table.s</file>
             <file>$PROJ_DIR$\..\rt_CMSIS.c</file>
+            <file>$PROJ_DIR$\HAL_CM0.s</file>
             <file>$PROJ_DIR$\..\rt_Event.c</file>
-            <file>$PROJ_DIR$\..\rt_List.c</file>
-            <file>$PROJ_DIR$\..\rt_Mailbox.c</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Memory.__cstat.et</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Robin.o</file>
-            <file>$PROJ_DIR$\..\rt_Memory.c</file>
-            <file>$PROJ_DIR$\CM0_LE\RTX_Lib_CM.a</file>
+            <file>$PROJ_DIR$\..\HAL_CM.c</file>
             <file>$PROJ_DIR$\CM0_LE\rt_System.o</file>
-            <file>$PROJ_DIR$\..\rt_Mutex.c</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_MemBox.__cstat.et</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_CMSIS.__cstat.et</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Task.o</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Semaphore.__cstat.et</file>
-            <file>$PROJ_DIR$\CM0_LE\HAL_CM0.o</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Mutex.__cstat.et</file>
-            <file>$PROJ_DIR$\..\rt_System.c</file>
-            <file>$PROJ_DIR$\..\rt_MemBox.c</file>
-            <file>$PROJ_DIR$\..\rt_Task.c</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Time.o</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Time.__cstat.et</file>
-            <file>$PROJ_DIR$\CM0_LE\HAL_CM.__cstat.et</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Robin.__cstat.et</file>
             <file>$PROJ_DIR$\CM0_LE\rt_List.o</file>
-            <file>$PROJ_DIR$\..\rt_Timer.c</file>
-            <file>$PROJ_DIR$\..\rt_Semaphore.c</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Event.o</file>
-            <file>$PROJ_DIR$\CM0_LE\HAL_CM.o</file>
             <file>$PROJ_DIR$\CM0_LE\rt_Timer.o</file>
-            <file>$PROJ_DIR$\..\rt_Time.c</file>
-            <file>$PROJ_DIR$\..\rt_Robin.c</file>
             <file>$PROJ_DIR$\CM0_LE\rt_MemBox.o</file>
+            <file>$PROJ_DIR$\..\rt_List.c</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Time.__cstat.et</file>
+            <file>$PROJ_DIR$\..\rt_Mutex.c</file>
+            <file>$PROJ_DIR$\..\rt_Memory.c</file>
+            <file>$PROJ_DIR$\CM0_LE\HAL_CM.__cstat.et</file>
+            <file>$PROJ_DIR$\..\rt_MemBox.c</file>
+            <file>$PROJ_DIR$\..\rt_Robin.c</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Task.o</file>
+            <file>$PROJ_DIR$\..\rt_Semaphore.c</file>
             <file>$PROJ_DIR$\CM0_LE\rt_Timer.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\HAL_CM.o</file>
             <file>$PROJ_DIR$\CM0_LE\rt_CMSIS.o</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Semaphore.o</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_System.__cstat.et</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Mutex.o</file>
-            <file>$PROJ_DIR$\CM0_LE\SVC_Table.o</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Task.__cstat.et</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Memory.o</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Mailbox.__cstat.et</file>
-            <file>$PROJ_DIR$\CM0_LE\rt_Event.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_CMSIS.__cstat.et</file>
+            <file>$PROJ_DIR$\..\rt_Time.c</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Memory.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Robin.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Robin.o</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Mutex.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\HAL_CM0.o</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_MemBox.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\RTX_Lib_CM.a</file>
+            <file>$PROJ_DIR$\..\rt_Task.c</file>
+            <file>$PROJ_DIR$\..\rt_System.c</file>
+            <file>$PROJ_DIR$\..\rt_Timer.c</file>
+            <file>$PROJ_DIR$\..\rt_Mailbox.c</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Semaphore.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Time.o</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Event.o</file>
             <file>$PROJ_DIR$\CM0_LE\rt_Mailbox.o</file>
+            <file>$PROJ_DIR$\CM0_LE\SVC_Table.o</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Event.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Task.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Mailbox.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Mutex.o</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Memory.o</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_System.__cstat.et</file>
+            <file>$PROJ_DIR$\CM0_LE\rt_Semaphore.o</file>
             <file>$PROJ_DIR$\CM0_LE\rt_List.__cstat.et</file>
         </outputs>
         <file>
@@ -66,25 +66,7 @@
             <outputs>
                 <tool>
                     <name>IARCHIVE</name>
-                    <file> 10</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\HAL_CM.c</name>
-            <outputs>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 24</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\HAL_CM0.s</name>
-            <outputs>
-                <tool>
-                    <name>AARM</name>
-                    <file> 17</file>
+                    <file> 29</file>
                 </tool>
             </outputs>
         </file>
@@ -93,7 +75,7 @@
             <outputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 40</file>
+                    <file> 38</file>
                 </tool>
             </outputs>
         </file>
@@ -102,7 +84,16 @@
             <outputs>
                 <tool>
                     <name>__cstat</name>
-                    <file> 14</file>
+                    <file> 21</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL_CM0.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 27</file>
                 </tool>
             </outputs>
         </file>
@@ -111,7 +102,16 @@
             <outputs>
                 <tool>
                     <name>__cstat</name>
-                    <file> 44</file>
+                    <file> 39</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\HAL_CM.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 13</file>
                 </tool>
             </outputs>
         </file>
@@ -125,11 +125,11 @@
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\..\rt_Mailbox.c</name>
+            <name>$PROJ_DIR$\..\rt_Mutex.c</name>
             <outputs>
                 <tool>
                     <name>__cstat</name>
-                    <file> 43</file>
+                    <file> 26</file>
                 </tool>
             </outputs>
         </file>
@@ -138,25 +138,7 @@
             <outputs>
                 <tool>
                     <name>__cstat</name>
-                    <file> 7</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\rt_Mutex.c</name>
-            <outputs>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 18</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\rt_System.c</name>
-            <outputs>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 38</file>
+                    <file> 23</file>
                 </tool>
             </outputs>
         </file>
@@ -165,43 +147,7 @@
             <outputs>
                 <tool>
                     <name>__cstat</name>
-                    <file> 13</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\rt_Task.c</name>
-            <outputs>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 41</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\rt_Timer.c</name>
-            <outputs>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 35</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\rt_Semaphore.c</name>
-            <outputs>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 16</file>
-                </tool>
-            </outputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\rt_Time.c</name>
-            <outputs>
-                <tool>
-                    <name>__cstat</name>
-                    <file> 23</file>
+                    <file> 28</file>
                 </tool>
             </outputs>
         </file>
@@ -210,7 +156,61 @@
             <outputs>
                 <tool>
                     <name>__cstat</name>
-                    <file> 25</file>
+                    <file> 24</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\rt_Semaphore.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 34</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\rt_Time.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 10</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\rt_Task.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\rt_System.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 44</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\rt_Timer.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 18</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\rt_Mailbox.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 41</file>
                 </tool>
             </outputs>
         </file>

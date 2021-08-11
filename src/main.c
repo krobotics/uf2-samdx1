@@ -292,9 +292,12 @@ int main(void) {
                 }
                 else
                 {
+                    
+
                     *DBL_TAP_PTR = 0;
                     delay(500);
-                    resetIntoApp();
+                    //resetIntoApp();
+                    msc_reset();
                 }
 
 #if USE_SCREEN
@@ -305,6 +308,7 @@ int main(void) {
 
             main_b_cdc_enable = true;
         }
+        LED_TX_ON();
 
 #if USE_MONITOR
         // Check if a USB enumeration has succeeded
@@ -332,7 +336,7 @@ int main(void) {
             process_msc();
         }
 #endif
-
+        RGBLED_set_color(COLOR_UART);
         if (!main_b_cdc_enable) {
             // get more predictable timings before the USB is enumerated
             for (int i = 1; i < 256; ++i) {

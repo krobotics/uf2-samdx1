@@ -14,4 +14,11 @@
 #define LED_TX_PIN PIN_PA17
 #define LED_RX_PIN PIN_PA16
 
+#define BOOT_USART_MODULE                 SERCOM5
+#define BOOT_USART_PAD_SETTINGS           UART_RX_PAD1_TX_PAD0
+#define BOOT_USART_PAD3                   PINMUX_UNUSED
+#define BOOT_USART_PAD2                   PINMUX_UNUSED
+#define BOOT_USART_PAD1                   PINMUX_PB03D_SERCOM5_PAD1
+#define BOOT_USART_PAD0                   PINMUX_PB02D_SERCOM5_PAD0
+
 #endif

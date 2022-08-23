@@ -10,9 +10,9 @@
 #define USB_VID 0x239A
 #define USB_PID 0x0015
 
-#define LED_PIN PIN_PA14
+#define LED_PIN PIN_PA15
 #define LED_TX_PIN PIN_PA17
-#define LED_RX_PIN PIN_PA16
+#define LED_RX_PIN PIN_PA19
 
 #define BOOT_USART_MODULE                 SERCOM5
 #define BOOT_USART_PAD_SETTINGS           UART_RX_PAD1_TX_PAD0

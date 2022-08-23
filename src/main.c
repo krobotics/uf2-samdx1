@@ -275,7 +275,7 @@ int main(void) {
     led_tick_step = 10;
 
     /* Wait for a complete enum on usb or a '#' char on serial line */
-    uint16_t retries=10;
+    //uint16_t retries=10;
     while (1) {
         if (USB_Ok()) {
             if (!main_b_cdc_enable) {
@@ -286,19 +286,19 @@ int main(void) {
                 RGBLED_set_color(COLOR_USB);
                 led_tick_step = 1;
 
-                if(retries)
-                {
-                    retries--;
-                }
-                else
-                {
+                // if(retries)
+                // {
+                //     retries--;
+                // }
+                // else
+                // {
                     
 
-                    *DBL_TAP_PTR = 0;
-                    delay(500);
-                    //resetIntoApp();
-                    msc_reset();
-                }
+                //     *DBL_TAP_PTR = 0;
+                //     delay(500);
+                //     //resetIntoApp();
+                //     msc_reset();
+                // }
 
 #if USE_SCREEN
                 screen_init();

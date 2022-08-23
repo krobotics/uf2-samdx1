@@ -24,7 +24,7 @@
 
 // always go for crystalless - smaller and more compatible
 #ifndef CRYSTALLESS
-#define CRYSTALLESS 1
+#define CRYSTALLESS 0
 #endif
 
 #ifndef USB_PID
@@ -77,7 +77,7 @@
 #define USE_HID_EXT 1      // extended HID commands (read/write mem); 60 bytes
 #define USE_HID_HANDOVER 0 //1 // allow HID application->bootloader seamless transition; 56 bytes
 #define USE_MSC_HANDOVER 0 //1 // ditto for MSC; 348 bytes
-#define USE_MSC_CHECKS 1 //0   // check validity of MSC commands; 460 bytes
+#define USE_MSC_CHECKS 0   // check validity of MSC commands; 460 bytes
 #define USE_CDC_TERMINAL 0 // enable ASCII mode on CDC loop (not used by BOSSA); 228 bytes
 #define USE_DBG_MSC 0      // output debug info about MSC
 

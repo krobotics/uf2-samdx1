@@ -24,7 +24,7 @@
 
 // always go for crystalless - smaller and more compatible
 #ifndef CRYSTALLESS
-#define CRYSTALLESS 0
+#define CRYSTALLESS 1
 #endif
 
 #ifndef USB_PID
@@ -54,7 +54,7 @@
 // Support the UART (real serial port, not USB)
 #define USE_UART 0
 // Support Human Interface Device (HID) - serial, flashing and debug
-#define USE_HID 1 // 788 bytes
+#define USE_HID 0 //1 // 788 bytes
 // Expose HID via WebUSB
 #define USE_WEBUSB 0
 // Doesn't yet disable code, just enumeration
@@ -75,9 +75,9 @@
 // Fine-tuning of features
 #define USE_HID_SERIAL 0   // just an example, not really needed; 36 bytes
 #define USE_HID_EXT 1      // extended HID commands (read/write mem); 60 bytes
-#define USE_HID_HANDOVER 1 // allow HID application->bootloader seamless transition; 56 bytes
-#define USE_MSC_HANDOVER 1 // ditto for MSC; 348 bytes
-#define USE_MSC_CHECKS 0   // check validity of MSC commands; 460 bytes
+#define USE_HID_HANDOVER 0 //1 // allow HID application->bootloader seamless transition; 56 bytes
+#define USE_MSC_HANDOVER 0 //1 // ditto for MSC; 348 bytes
+#define USE_MSC_CHECKS 1 //0   // check validity of MSC commands; 460 bytes
 #define USE_CDC_TERMINAL 0 // enable ASCII mode on CDC loop (not used by BOSSA); 228 bytes
 #define USE_DBG_MSC 0      // output debug info about MSC
 

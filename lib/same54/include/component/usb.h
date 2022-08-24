@@ -180,13 +180,13 @@ typedef union {
 #if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
 typedef union {
   struct {
-    uint16_t :1;               /*!< bit:      0  Reserved                           */
+    uint16_t DETACH:1;               /*!< bit:      0  Reserved                           */
     uint16_t RESUME:1;         /*!< bit:      1  Send USB Resume                    */
     uint16_t SPDCONF:2;        /*!< bit:  2.. 3  Speed Configuration for Host       */
     uint16_t AUTORESUME:1;     /*!< bit:      4  Auto Resume Enable                 */
     uint16_t TSTJ:1;           /*!< bit:      5  Test mode J                        */
     uint16_t TSTK:1;           /*!< bit:      6  Test mode K                        */
-    uint16_t :1;               /*!< bit:      7  Reserved                           */
+    uint16_t TSTPCKT:1;               /*!< bit:      7  Reserved                           */
     uint16_t SOFE:1;           /*!< bit:      8  Start of Frame Generation Enable   */
     uint16_t BUSRESET:1;       /*!< bit:      9  Send USB Reset                     */
     uint16_t VBUSOK:1;         /*!< bit:     10  VBUS is OK                         */

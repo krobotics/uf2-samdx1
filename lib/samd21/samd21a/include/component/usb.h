@@ -196,7 +196,7 @@ typedef union {
 #if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
 typedef union {
   struct {
-    uint16_t :1;               /*!< bit:      0  Reserved                           */
+    uint16_t DETACH:1;               /*!< bit:      0  Reserved                           */
     uint16_t RESUME:1;         /*!< bit:      1  Send USB Resume                    */
     uint16_t SPDCONF:2;        /*!< bit:  2.. 3  Speed Configuration for Host       */
     uint16_t :1;               /*!< bit:      4  Reserved                           */

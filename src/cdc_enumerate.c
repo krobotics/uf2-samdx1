@@ -498,9 +498,11 @@ void AT91F_InitUSB(void) {
 
     /* Reset */
     USB->HOST.CTRLA.bit.SWRST = 1;
-    while (USB->HOST.SYNCBUSY.bit.SWRST) {
-        /* Sync wait */
-    }
+    while (USB->HOST.SYNCBUSY.bit.SWRST == 0) {}
+    while (USB->HOST.SYNCBUSY.bit.SWRST == 1) {}
+    // while (USB->HOST.SYNCBUSY.bit.SWRST) {
+    //     /* Sync wait */
+    // }
 
     /* Load Pad Calibration */
     pad_transn = ((*((uint32_t*) USB_FUSES_TRANSN_ADDR)) & USB_FUSES_TRANSN_Msk) >> USB_FUSES_TRANSN_Pos;
@@ -526,6 +528,9 @@ void AT91F_InitUSB(void) {
 
     USB->HOST.PADCAL.bit.TRIM = pad_trim;
 
+    USB->DEVICE.QOSCTRL.bit.CQOS = 3; // High Quality
+    USB->DEVICE.QOSCTRL.bit.DQOS = 3; // High Quality
+
     /* Set the configuration */
     /* Set mode to Device mode */
     USB->HOST.CTRLA.bit.MODE = 0;
@@ -535,8 +540,15 @@ void AT91F_InitUSB(void) {
     USB->HOST.DESCADD.reg = (uint32_t)(&usb_endpoint_table[0]);
     /* Set speed configuration to Full speed */
     USB->DEVICE.CTRLB.bit.SPDCONF = USB_DEVICE_CTRLB_SPDCONF_FS_Val;
+    USB->DEVICE.CTRLA.reg = USB_CTRLA_MODE_DEVICE | USB_CTRLA_ENABLE | USB_CTRLA_RUNSTDBY;
+    while (USB->DEVICE.SYNCBUSY.bit.ENABLE == 1) {}
+
     /* Attach to the USB host */
-    USB->DEVICE.CTRLB.reg &= ~USB_DEVICE_CTRLB_DETACH;
+    //USB->DEVICE.CTRLB.reg &= ~USB_DEVICE_CTRLB_DETACH;
+    USB->DEVICE.CTRLB.bit.DETACH = 0; // gk from trinity code
+
+    USB->DEVICE.INTFLAG.reg |= USB->DEVICE.INTFLAG.reg; // clear pending
+
 
     /* Initialize endpoint table RAM location to a known value 0 */
     memset((uint8_t *)(&usb_endpoint_table[0]), 0, sizeof(usb_endpoint_table));

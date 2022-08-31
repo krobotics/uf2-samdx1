@@ -119,8 +119,8 @@ char cfgDescriptor[] = {
     1 + 2 * USE_CDC + USE_HID + USE_WEBUSB, // CbNumInterfaces
     0x01,                                   // CbConfigurationValue
     0x00,                                   // CiConfiguration
-    0x80,                                   // CbmAttributes 0x80 - bus-powered
-    USB_POWER_MA/2,                         // MaxPower (*2mA)
+    0xC0,//0x80,                                   // CbmAttributes 0x80 - bus-powered
+    0,//USB_POWER_MA/2,                         // MaxPower (*2mA)
 
 #if USE_CDC
     // IAD for CDC

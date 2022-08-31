@@ -236,7 +236,7 @@ int main(void) {
 
 #if USB_VID == 0x239a && USB_PID == 0x0013     // Adafruit Metro M0
     // Delay a bit so SWD programmer can have time to attach.
-    delay(15);
+    //delay(15);
 #endif
     led_init();
 
@@ -274,17 +274,28 @@ int main(void) {
     RGBLED_set_color(COLOR_START);
     led_tick_step = 10;
 
+    uint16_t reboot=20000;
+    uint8_t restart=5;
+    uint8_t onoff=1;
     /* Wait for a complete enum on usb or a '#' char on serial line */
     //uint16_t retries=10;
-    while (1) {
-        if (USB_Ok()) {
-            if (!main_b_cdc_enable) {
+    LED_TX_OFF();
+
+    while (1) 
+    {
+        LED_RX_OFF();
+        if (USB_Ok()) 
+        {
+            if (!main_b_cdc_enable) 
+            {
 #if USE_SINGLE_RESET
                 // this might have been set
                 resetHorizon = 0;
 #endif
                 RGBLED_set_color(COLOR_USB);
                 led_tick_step = 1;
+
+                
 
                 // if(retries)
                 // {
@@ -308,40 +319,73 @@ int main(void) {
 
             main_b_cdc_enable = true;
         }
-        LED_TX_ON();
-
-#if USE_MONITOR
+        //LED_TX_ON();
+ 
+//#if USE_MONITOR
         // Check if a USB enumeration has succeeded
         // And com port was opened
-        if (main_b_cdc_enable) {
+        if (main_b_cdc_enable) 
+        {
+            LED_RX_ON();
             logmsg("entering monitor loop");
             // SAM-BA on USB loop
-            while (1) {
+            while (1) 
+            {
                 sam_ba_monitor_run();
             }
         }
 #if USE_UART
         /* Check if a '#' has been received */
-        if (!main_b_cdc_enable && usart_sharp_received()) {
+        if (!main_b_cdc_enable && usart_sharp_received()) 
+        {
             RGBLED_set_color(COLOR_UART);
             sam_ba_monitor_init(SAM_BA_INTERFACE_USART);
             /* SAM-BA on UART loop */
-            while (1) {
+            while (1) 
+            {
                 sam_ba_monitor_run();
             }
         }
 #endif
-#else // no monitor
-        if (main_b_cdc_enable) {
-            process_msc();
-        }
-#endif
+//#else // no monitor
+        // if (main_b_cdc_enable) 
+        // {
+        //     process_msc();
+        // }
+//#endif
         RGBLED_set_color(COLOR_UART);
-        if (!main_b_cdc_enable) {
+        if (!main_b_cdc_enable) 
+        {
+            if(reboot)
+            {
+                reboot--;
+            }
+            else
+            {
+                if(onoff)
+                    LED_TX_OFF();
+                else
+                    LED_TX_ON();
+                onoff=!onoff;
+                reboot=20000;
+                if(!restart--)
+                {
+                  NVIC_SystemReset() ;  
+                }
+            }
+
             // get more predictable timings before the USB is enumerated
-            for (int i = 1; i < 256; ++i) {
+            for (int i = 1; i < 256; ++i) 
+            {
                 asm("nop");
             }
+            // if(!(reboot--))
+            // {
+            //     for (uint16_t j = 1; j < 500; ++j) {
+            //         asm("nop");
+            //     }
+            //     NVIC_SystemReset() ;
+            // }
         }
     }
 }

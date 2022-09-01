@@ -236,7 +236,7 @@ int main(void) {
 
 #if USB_VID == 0x239a && USB_PID == 0x0013     // Adafruit Metro M0
     // Delay a bit so SWD programmer can have time to attach.
-    //delay(15);
+    delay(15);
 #endif
     led_init();
 
@@ -274,12 +274,13 @@ int main(void) {
     RGBLED_set_color(COLOR_START);
     led_tick_step = 10;
 
-    uint16_t reboot=20000;
-    uint8_t restart=5;
+    //uint16_t reboot=5;
+    //uint8_t restart=8;
     uint8_t onoff=1;
     /* Wait for a complete enum on usb or a '#' char on serial line */
     //uint16_t retries=10;
     LED_TX_OFF();
+    main_b_cdc_enable = false;
 
     while (1) 
     {
@@ -295,7 +296,7 @@ int main(void) {
                 RGBLED_set_color(COLOR_USB);
                 led_tick_step = 1;
 
-                
+                LED_TX_OFF();
 
                 // if(retries)
                 // {
@@ -321,7 +322,6 @@ int main(void) {
         }
         //LED_TX_ON();
  
-//#if USE_MONITOR
         // Check if a USB enumeration has succeeded
         // And com port was opened
         if (main_b_cdc_enable) 
@@ -334,45 +334,35 @@ int main(void) {
                 sam_ba_monitor_run();
             }
         }
-#if USE_UART
-        /* Check if a '#' has been received */
-        if (!main_b_cdc_enable && usart_sharp_received()) 
+        else
         {
-            RGBLED_set_color(COLOR_UART);
-            sam_ba_monitor_init(SAM_BA_INTERFACE_USART);
-            /* SAM-BA on UART loop */
-            while (1) 
-            {
-                sam_ba_monitor_run();
-            }
-        }
-#endif
-//#else // no monitor
-        // if (main_b_cdc_enable) 
-        // {
-        //     process_msc();
-        // }
-//#endif
+            delay(200);
+            if(onoff)
+                LED_TX_OFF();
+            else
+                LED_TX_ON();
+            onoff=!onoff;
+         }
+
         RGBLED_set_color(COLOR_UART);
         if (!main_b_cdc_enable) 
         {
-            if(reboot)
-            {
-                reboot--;
-            }
-            else
-            {
-                if(onoff)
-                    LED_TX_OFF();
-                else
-                    LED_TX_ON();
-                onoff=!onoff;
-                reboot=20000;
-                if(!restart--)
-                {
-                  NVIC_SystemReset() ;  
-                }
-            }
+            // delay(300);
+            // if(onoff)
+            //     LED_TX_OFF();
+            // else
+            //     LED_TX_ON();
+            // onoff=!onoff;
+            // if(restart)
+            // {
+            //     restart--;
+            // }
+            // else
+            // {
+            //     LED_TX_OFF();
+            //     delay(100);
+            //     NVIC_SystemReset() ;  
+            // }
 
             // get more predictable timings before the USB is enumerated
             for (int i = 1; i < 256; ++i) 

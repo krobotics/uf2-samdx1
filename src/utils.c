@@ -200,6 +200,16 @@ void led_init() {
     LED_RX_OFF();
 #endif
 
+#if defined(VALVE_PIN)
+    PINOP(VALVE_PIN, DIRSET);
+    PINOP(VALVE_PIN, OUTCLR);
+#endif
+
+#if defined(SPARE_PIN)
+    PINOP(SPARE_PIN, DIRSET);
+    PINOP(SPARE_PIN, OUTCLR);
+#endif
+
 #if defined(BOARD_NEOPIXEL_POWERPIN)
     PINOP(BOARD_NEOPIXEL_POWERPIN, DIRSET);
     PINOP(BOARD_NEOPIXEL_POWERPIN, OUTSET);

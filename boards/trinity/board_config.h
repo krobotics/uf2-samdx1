@@ -13,6 +13,8 @@
 #define LED_PIN PIN_PA15
 #define LED_TX_PIN PIN_PA17
 #define LED_RX_PIN PIN_PA19
+#define VALVE_PIN PIN_PA20
+#define SPARE_PIN PIN_PA16
 
 #define BOOT_USART_MODULE                 SERCOM5
 #define BOOT_USART_PAD_SETTINGS           UART_RX_PAD1_TX_PAD0
